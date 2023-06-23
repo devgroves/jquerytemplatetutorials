@@ -1,0 +1,41 @@
+<head>
+  <link rel="icon" type="image/x-icon" href="data:;base64,iVBORw0KG..."> 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.5.10/jquery.loadTemplate.min.js"></script>
+  <style>
+    #templateContainer {
+  background-color: lightgray;
+}
+  </style>
+</head>
+<body>
+  <div id="templateContainer">
+
+  </div>
+  <script>
+$(document).ready(function() {
+  $("#templateContainer").loadTemplate("template.html", {
+  title: 'studentsProfile',
+  fullName: 'Joe Bloggs',
+  dateOfBirth: '25th May 2013',
+  studentPicture: 'img/images.jpeg',
+  phoneNumber: 'This is the contents of my post',
+  email: 'dhivyathiruvenkadam@gmail.com',
+  options: [{ value: 1, content: 'male' }, { value: 2, content: 'female'}],
+});
+  function sameCaseFormatter(value, options) {
+    if (options === 'upper') {
+    console.log(content.toUpperCase());
+      return value.toUpperCase();
+    } else if (options === 'lower') {
+      return value.toLowerCase();
+    }
+    // Additional formatting options can be added here
+    return content;
+  }
+});
+  </script>
+</body>
+
+
+

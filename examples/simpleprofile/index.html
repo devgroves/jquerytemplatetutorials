@@ -1,0 +1,43 @@
+<head>
+  <link rel="icon" type="image/x-icon" href="data:;base64,iVBORw0KG...">
+  <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+<!-- Bootstrap CSS -->
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+<!-- Font Awesome CSS -->
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'> 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+</head>
+<body>
+  <div id="templateContainer">
+
+  </div>
+  
+  <script>
+$(document).ready(function() {
+  // Sample JSON data
+  var jsonData = {
+    FullName: "Dev",
+    DateofBirth: "23.06.2018",
+    Gender: "male",
+    EmailAddress:"dev@gmail.com",
+    
+  };
+
+  // Load the template and populate it with the JSON data
+  $('#templateContainer').load('template.html', function() {
+    // Replace placeholders with actual JSON data
+    $('#templateContainer h1').text(jsonData.title);
+      $('#templateContainer .name').text(jsonData.FullName);
+    $('#templateContainer .dob').text(jsonData.DateofBirth);
+    $('#templateContainer .gender').text(jsonData.Gender);
+    $('#templateContainer .mailId').text(jsonData.EmailAddress);
+  });
+});
+
+  </script>
+</body>
+
+
+
