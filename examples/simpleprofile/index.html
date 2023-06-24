@@ -22,12 +22,8 @@ $(document).ready(function() {
     DateofBirth: "23.06.2018",
     Gender: "male",
     EmailAddress:"dev@gmail.com",
-    
   };
-
-  // Load the template and populate it with the JSON data
   $('#templateContainer').load('template.html', function() {
-    // Replace placeholders with actual JSON data
     $('#templateContainer h1').text(jsonData.title);
       $('#templateContainer .name').text(jsonData.FullName);
     $('#templateContainer .dob').text(jsonData.DateofBirth);
