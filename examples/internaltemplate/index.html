@@ -1,0 +1,43 @@
+<head>
+  <link rel="icon" type="image/x-icon" href="data:;base64,iVBORw0KG...">
+  <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+<!-- Bootstrap CSS -->
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+<!-- Font Awesome CSS -->
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'> 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.2.2/jquery.loadTemplate.js" integrity="sha512-Aoq4dr/+zSE8K/PvusNDNhxzpjIS5q6xhhaigr653z9XLQVMTzxavwXgSXG5jo8DTk5Pq8vQ7e+KgAeGGS/hPA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+  <div id="templateContainer">
+
+  </div>
+  <script type="text/html" id="usertemplate">
+    <h1 style="color: darkblue;"> User Profile</h1>
+    <h5>User Name : <span style="color:green;" data-content="name"></span></h5>
+    <h5>Date of Birth : <span style="color:green;" data-content="dob"></span></h5>
+    <h5>Gender : <span style="color:green;" data-content="gender"></span></h5>
+    <h5>Mail Id : <span style="color:green;" data-content="mailId"></span></h5>
+  </script>
+  <script>
+$(document).ready(function() {
+  // Sample JSON data
+  let jsonData = {
+    "name": "Dev",
+    "dob": "23.06.2018",
+    "gender": "male",
+    "mailId":"dev@gmail.com",
+  };
+
+  $("#templateContainer").loadTemplate($("#usertemplate"),
+	jsonData);
+  
+});
+
+  </script>
+</body>
+
+
+
