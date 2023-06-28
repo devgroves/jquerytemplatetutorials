@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Details</title>
+   <link rel="icon" type="image/x-icon" href="data:;base64,iVBORw0KG..."> 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.5.10/jquery.loadTemplate.min.js"></script>
+</head>
+<body>
+  <div id="templateContainer"></div>
+<script type="text/html" id="outerTemplate">
+  <div style="display: flex;"><h1>Studentprofile using <br> nestedTemplate</h1>
+<div class="profileImg">
+  <img data-src="studentPicture" data-alt="icon" style="width: 50px;height: 50px;margin-top: 5px;" data-link-wrap="studentPicture"/>
+ </div>
+</div>
+<form style="margin-top: 5px;">
+<div style="display: flex;margin-top: 5px;">
+  <label style="color: black; font: 15px Arial, sans-serif;" for="firstName">Student Name:</label>
+  <div class="name" style="font: 15px Arial;color:green">
+     <input style="margin-left: 5px;" type="text" data-value="studentName"/>
+  </div>
+</div>
+<div style="display: flex;margin-top: 5px;">
+  <label style="color: black; font: 15px Arial, sans-serif;">DOB:</label>
+  <div class="dob" style="font: 15px Arial;color:green">
+  <input style="margin-left: 5px;" type="text" data-value="educationalyear"/>
+  </div>
+</div>
+<div style="display: flex;margin-top: 5px;">
+   <label style="color: black; font: 15px Arial, sans-serif;">Courses:</label>
+   <div style="font: 15px Arial;color:green; margin-left: 5px;">
+   <select data-value="selectedItem" data-template-bind='{"attribute": "options", "value": {"data": "options", "value":"value", "content":"content"}}'></select>
+  </div>
+</div>
+ <div style="display: flex;margin-top: 5px;" >
+  <label style="color: black; font: 15px Arial, sans-serif;" for="mailto">Email:</label>
+<div>
+  <a class="mailId" href="mailto:dev@gmail.com" style="font: 15px Arial;color:rgb(37, 16, 230); text-decoration: underline;margin-left: 5px;">dev@gmail.com</a>
+</div>
+ </div>
+
+</form>
+    </div>
+     <div data-content-prepend="grades" data-format="nestedTemplateFormatter"  data-format-options='{"template":"#nestedTemplate"}'></div>
+</script>
+
+<script type="text/html" id="nestedTemplate">
+   <div style="display: flex;margin-top: 5px;" >
+  <label style="color: black; font: 15px Arial, sans-serif;">Grade:</label>
+    <div  style="color:#5c7d07;" data-content="grade"></div>
+ </div>
+
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+     var data = {
+            studentName: 'Joe Bloggs',
+              studentPicture: 'img/images.jpeg',
+            educationalyear: '2023-2024',
+            options: [{ value: 1, content: 'Btech_IT' }, { value: 2, content: 'BE_CSE'},{ value: 3, content: 'BE_ECE'},{ value: 4, content: 'BE_Mech'},{value:5,content:'BE_Civil'}],
+            selectedItem: 1,
+            "grades":[{"grade":"A"}]
+        };
+         $("#templateContainer").loadTemplate("#outerTemplate", data);
+    });
+             
+</script>
+</body>
+</html>
