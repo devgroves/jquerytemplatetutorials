@@ -11,22 +11,18 @@
 </head>
 <body>
   <div id="templateContainer">
-
   </div>
-  
   <script>
 $(document).ready(function() {
   // Sample JSON data
   var jsonData = {
     FullName: "Dev",
-    profileImage:'img/images.jpeg',
     DateofBirth: "23.06.2018",
     Gender: "male",
     EmailAddress:"dev@gmail.com",
   };
   $('#templateContainer').load('template.html', function() {
     $('#templateContainer h1').text(jsonData.title);
-   $('#templateContainer .profileImg img').attr('src', jsonData.profileImage);
       $('#templateContainer .name').text(jsonData.FullName);
     $('#templateContainer .dob').text(jsonData.DateofBirth);
     $('#templateContainer .gender').text(jsonData.Gender);
