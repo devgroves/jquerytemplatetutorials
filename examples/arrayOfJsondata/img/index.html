@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Marks</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.0-beta/jsrender.min.js"></script>
+  <style>
+    .card {
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-image {
+      width: 100%;
+      max-height: 200px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .profile-details {
+      margin-top: 16px;
+    }
+
+    .name {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .mail {
+      color: #666;
+    }
+
+    .edu-year {
+      color: #666;
+    }
+
+    .grade-label {
+      font-weight: bold;
+    }
+
+    .grade-value {
+      margin-left: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Student Marks:</h2>
+  <div id="marksContainer">
+    <div class="card">
+      <img class="profile-image" src="" alt="Student Picture" id="studentPicture">
+      <div class="profile-details">
+        <h3 class="name" id="studentName"></h3>
+        <p class="mail"><strong>Mail ID:</strong> <span id="mailId"></span></p>
+        <p class="edu-year"><strong>Educational Year:</strong> <span id="educationalYear"></span></p>
+
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody id="marksTableBody">
+        <!-- Marks will be dynamically added here -->
+      </tbody>
+    </table>
+  </div>
+
+  <script id="marksTemplate" type="text/x-jsrender">
+    <tr>
+      <td>{{:subject}}</td>
+      <td>{{:grade}}</td>
+    </tr>
+  </script>
+
+  <script>
+    $(document).ready(function() {
+      var posts = [
+        {
+          studentName: 'Joe Bloggs',
+          studentPicture: 'img/images.jpeg',
+          mailId: 'joebloggs@gmail.com',
+          educationalYear: '2023-2024',
+          options: [
+            { subject: 'Btech_IT', grade: 'AIC' },
+            { subject: 'BE_CSE', grade: 'ALS' },
+            { subject: 'BE_ECE', grade: 'ALS' },
+            { subject: 'BE_Mech', grade: 'ALS' },
+            { subject: 'BE_Civil', grade: 'ALS' }
+          ],
+          selectedItem: 1,
+          grades: [
+            { subject: 'sub1', grade: '80' },
+            { subject: 'sub2', grade: '70' },
+            { subject: 'sub3', grade: '60' }
+          ]
+        }
+      ];
+
+      // Get the marksTemplate HTML
+      var marksTemplate = $("#marksTemplate").html();
+
+      // Render the marks using tmpl
+      var htmlOutput = $.templates(marksTemplate).render(posts[0].grades);
+
+      // Append the rendered HTML to the marksTableBody element
+      $("#marksTableBody").append(htmlOutput);
+
+      // Set the student details
+      $("#studentName").text(posts[0].studentName);
+      $("#studentPicture").attr("src", posts[0].studentPicture);
+      $("#mailId").text(posts[0].mailId);
+      $("#educationalYear").text(posts[0].educationalYear);
+      $("#aic").text(posts[0].options[posts[0].selectedItem].grade);
+      $("#als").text(posts[0].options[posts[0].selectedItem].subject);
+    });
+  </script>
+</body>
+</html>
