@@ -14,24 +14,20 @@
   </div>
   <script>
 $(document).ready(function() {
+  $.addTemplateFormatter("DateFormatter",
+    function(value, options) {
+        console.log("date formatter values ", value.replaceAll(" ", "-"), options); 
+        return value.replaceAll(" ", "-");
+    });
   $("#templateContainer").loadTemplate("template.html", {
-  title: 'studentsProfile',
-  fullName: 'Joe Bloggs',
-  dateOfBirth: '25th May 2013',
-  studentPicture: 'img/images.jpeg',
-  phoneNumber: 'This is the contents of my post',
-  email: 'dhivyathiruvenkadam@gmail.com',
-  options: [{ value: 1, content: 'male' }, { value: 2, content: 'female'}],
-});
-  function sameCaseFormatter(value, options) {
-    if (options === 'upper') {
-    console.log(content.toUpperCase());
-      return value.toUpperCase();
-    } else if (options === 'lower') {
-      return value.toLowerCase();
-    }
-    return content;
-  }
+    title: 'studentsProfile',
+    fullName: 'Joe Bloggs',
+    dateOfBirth: '25th May 2013',
+    studentPicture: 'img/images.jpeg',
+    phoneNumber: 'This is the contents of my post',
+    email: 'dhivyathiruvenkadam@gmail.com',
+    options: [{ value: 1, content: 'male' }, { value: 2, content: 'female'}],
+  });
 });
   </script>
 </body>

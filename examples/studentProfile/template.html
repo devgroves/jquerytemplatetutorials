@@ -8,15 +8,17 @@
 </div>
 <div>
   <label for="dateOfBirth">DOB:</label>
- <span data-content="dateOfBirth"></span>
-
+  <span type="text" data-content="dateOfBirth" data-format="DateFormatter" data-format-options="isodate"/>
 </div>
 <div>
    <span type="text" data-content="phoneNumber"></span>
 </div>
 <div>
   <label for="selectedItem">Gender:</label>
-<select data-value="selectedItem" data-template-bind='{"attribute": "options", "value": {"data": "options", "value":"value", "content":"content"}}'  data-format="sameCaseFormatter" data-format-options="upper"></select>
+<select data-value="selectedItem" data-template-bind='{"attribute": "options", "value": {"data": "options", "value":"value", "content":"content"}}'>
+  <option>Male</option>
+  <option>Female</option>
+</select>
 </div>
 <div>
   <label for="mailto">Email:</label>

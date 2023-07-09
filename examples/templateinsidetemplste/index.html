@@ -1,93 +1,108 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<title>Student Profile Card</title>
-   <link rel="icon" type="image/x-icon" href="data:;base64,iVBORw0KG..."> 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.5.10/jquery.loadTemplate.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<html>
 <head>
-  <style>
-    @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Student Profile Card</title>
+    <link rel="icon" type="image/x-icon" href="data:;base64,iVBORw0KG...">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.5.10/jquery.loadTemplate.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
 
-body{
-    background:#f3f3f4;
-    padding-top:30px;
-    font-family: 'Open Sans', sans-serif;
-}
-.userMain .userBlock{
-    float: left;
-    width: 100%;
-    box-shadow: 0px 0px 23px -3px #ccc;
-    padding-bottom: 12px;
-    margin-bottom: 30px;
-    overflow: hidden;
-    background:#fff;
-    
 
-}
-.userMain .userBlock .backgrounImg{
-    float: left;
-    overflow: hidden;
-    height: 77px;
-}
-.userMain .userBlock .backgrounImg img{
-    width: auto;
-}
-.userMain .userBlock .userImg{
-    text-align: center;
-}
-.userMain .userBlock .userImg img{
-    width: 80px;
-    height: 80px;
-    margin-top: -39px;
-    border-radius: 100%;
-    border: 5px solid #fff;
-    
-}
-.userMain .userBlock .userDescription{
-    text-align: center;
-}
-.userMain .userBlock .userDescription h5{
-    margin-bottom: 2px;
-    font-weight: 600;
-}
-.userMain .userBlock .userDescription p{
-    margin-bottom: 5px;
-}
-.userMain .userBlock .userDescription .btn{
-    padding: 0px 23px 0px 23px;
-    height: 22px;
-    border-radius: 0;
-    font-size: 12px;
-    background: #0198dd;
-    color: #fff;
-}
-.userMain .userBlock .userDescription .btn:hover{
-    
-    opacity:0.7;
-}
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-.userMain .userBlock .followrs{
-    display: inline-flex;
-    margin-right: 10px;
-    border-right: 1px solid #ccc;
-    padding-right: 10px;
-}
-.userMain .userBlock .followrs .number{
-    font-size: 15px;
-    font-weight: bold;
-    margin-right: 5px;
-    margin-top: -1px;
-    margin-left: 10px;
-}
-  </style>
+        body {
+            background: #f3f3f4;
+            padding-top: 30px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .userMain .userBlock {
+            float: left;
+            width: 100%;
+            box-shadow: 0px 0px 23px -3px #ccc;
+            padding-bottom: 12px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            background: #fff;
+
+
+        }
+
+        .userMain .userBlock .backgrounImg {
+            float: left;
+            overflow: hidden;
+            height: 77px;
+        }
+
+        .userMain .userBlock .backgrounImg img {
+            width: auto;
+        }
+
+        .userMain .userBlock .userImg {
+            text-align: center;
+        }
+
+        .userMain .userBlock .userImg img {
+            width: 80px;
+            height: 80px;
+            margin-top: -39px;
+            border-radius: 100%;
+            border: 5px solid #fff;
+
+        }
+
+        .userMain .userBlock .userDescription {
+            text-align: center;
+        }
+
+        .userMain .userBlock .userDescription h5 {
+            margin-bottom: 2px;
+            font-weight: 600;
+        }
+
+        .userMain .userBlock .userDescription p {
+            margin-bottom: 5px;
+        }
+
+        .userMain .userBlock .userDescription .btn {
+            padding: 0px 23px 0px 23px;
+            height: 22px;
+            border-radius: 0;
+            font-size: 12px;
+            background: #0198dd;
+            color: #fff;
+        }
+
+        .userMain .userBlock .userDescription .btn:hover {
+
+            opacity: 0.7;
+        }
+
+        .userMain .userBlock .followrs {
+            display: inline-flex;
+            margin-right: 10px;
+            border-right: 1px solid #ccc;
+            padding-right: 10px;
+        }
+
+        .userMain .userBlock .followrs .number {
+            font-size: 15px;
+            font-weight: bold;
+            margin-right: 5px;
+            margin-top: -1px;
+            margin-left: 10px;
+        }
+    </style>
 </head>
+<body>
 <div class="row userMain" style="margin-top:5%;" id="templateContainer">
 
 </div>
 <script type="text/html" id="outerTemplate">
-  
+
        <div class="col-md-3 col-sm-4">
            <div class="userBlock">
                <div class="backgrounImg">
@@ -109,7 +124,7 @@ body{
            </div>
        </div>
 </script>
-  <script type="text/html" id="nestedTemplate">
+<script type="text/html" id="nestedTemplate">
         <div class="followrs">
                         <span data-content="subject">Followers</span>
                         <span class="number" data-content="grade">137</span>
@@ -117,71 +132,72 @@ body{
  </div>
 
 </script>
- <script type="text/javascript">
-  $(document).ready(function() {
-      var posts = [           
+<script type="text/javascript">
+    $(document).ready(function () {
+        var students = [
             {
-            studentName: 'Joe Bloggs',
-            studentPicture: 'img/images.jpeg',
-            mailId:'joebloggs@gmail.com',
-            educationalyear: '2023-2024',
-            options: [{ value: 1, content: 'Btech_IT' }, { value: 2, content: 'BE_CSE'},{ value: 3, content: 'BE_ECE'},{ value: 4, content: 'BE_Mech'},{value:5,content:'BE_Civil'}],
-            selectedItem: 1,
-               "grades": [
-        { "subject": 'sub1', "grade": '80' },
-         { "subject": 'sub2', "grade": '70' },
-          { "subject": 'sub3', "grade": '60' }
+                studentName: 'Joe Bloggs',
+                studentPicture: 'img/images.jpeg',
+                mailId: 'joebloggs@gmail.com',
+                educationalyear: '2023-2024',
+                options: [{ value: 1, content: 'Btech_IT' }, { value: 2, content: 'BE_CSE' }, { value: 3, content: 'BE_ECE' }, { value: 4, content: 'BE_Mech' }, { value: 5, content: 'BE_Civil' }],
+                selectedItem: 1,
+                "grades": [
+                    { "subject": 'sub1', "grade": '80' },
+                    { "subject": 'sub2', "grade": '70' },
+                    { "subject": 'sub3', "grade": '60' }
 
-      ]
+                ]
             },
             {
-          studentName: 'Joe',
-            studentPicture: 'img/images.jpeg',
-            mailId:'joe@gmail.com',
-            educationalyear: '2023-2024',
-            options: [{ value: 1, content: 'Btech_IT' }, { value: 2, content: 'BE_CSE'},{ value: 3, content: 'BE_ECE'},{ value: 4, content: 'BE_Mech'},{value:5,content:'BE_Civil'}],
-            selectedItem: 1,
-              "grades": [
-        { "subject": 'sub1', "grade": '60' },
-         { "subject": 'sub2', "grade": '70' },
-          { "subject": 'sub3', "grade": '80' }
+                studentName: 'raj',
+                studentPicture: 'img/images.jpeg',
+                mailId: 'raj@gmail.com',
+                educationalyear: '2023-2024',
+                options: [{ value: 1, content: 'Btech_IT' }, { value: 2, content: 'BE_CSE' }, { value: 3, content: 'BE_ECE' }, { value: 4, content: 'BE_Mech' }, { value: 5, content: 'BE_Civil' }],
+                selectedItem: 1,
+                "grades": [
+                    { "subject": 'sub1', "grade": '60' },
+                    { "subject": 'sub2', "grade": '70' },
+                    { "subject": 'sub3', "grade": '80' }
 
-      ]
-        },
-                  {
-          studentName: 'Smith',
-            studentPicture: 'img/images.jpeg',
-            mailId:'smith@gmail.com',
-            educationalyear: '2023-2024',
-            options: [{ value: 1, content: 'Btech_IT' }, { value: 2, content: 'BE_CSE'},{ value: 3, content: 'BE_ECE'},{ value: 4, content: 'BE_Mech'},{value:5,content:'BE_Civil'}],
-            selectedItem: 1,
-              "grades": [
-        { "subject": 'sub1', "grade": '60' },
-         { "subject": 'sub2', "grade": '70' },
-          { "subject": 'sub3', "grade": '80' }
+                ]
+            },
+            {
+                studentName: 'Smith',
+                studentPicture: 'img/images.jpeg',
+                mailId: 'smith@gmail.com',
+                educationalyear: '2023-2024',
+                options: [{ value: 1, content: 'Btech_IT' }, { value: 2, content: 'BE_CSE' }, { value: 3, content: 'BE_ECE' }, { value: 4, content: 'BE_Mech' }, { value: 5, content: 'BE_Civil' }],
+                selectedItem: 1,
+                "grades": [
+                    { "subject": 'sub1', "grade": '60' },
+                    { "subject": 'sub2', "grade": '70' },
+                    { "subject": 'sub3', "grade": '80' }
 
-      ]
-        },
-                  {
-          studentName: 'James',
-            studentPicture: 'img/images.jpeg',
-            mailId:'james@gmail.com',
-            educationalyear: '2023-2024',
-            options: [{ value: 1, content: 'Btech_IT' }, { value: 2, content: 'BE_CSE'},{ value: 3, content: 'BE_ECE'},{ value: 4, content: 'BE_Mech'},{value:5,content:'BE_Civil'}],
-            selectedItem: 1,
-              "grades": [
-        { "subject": 'sub1', "grade": '60' },
-         { "subject": 'sub2', "grade": '70' },
-          { "subject": 'sub3', "grade": '80' }
+                ]
+            },
+            {
+                studentName: 'James',
+                studentPicture: 'img/images.jpeg',
+                mailId: 'james@gmail.com',
+                educationalyear: '2023-2024',
+                options: [{ value: 1, content: 'Btech_IT' }, { value: 2, content: 'BE_CSE' }, { value: 3, content: 'BE_ECE' }, { value: 4, content: 'BE_Mech' }, { value: 5, content: 'BE_Civil' }],
+                selectedItem: 1,
+                "grades": [
+                    { "subject": 'sub1', "grade": '60' },
+                    { "subject": 'sub2', "grade": '70' },
+                    { "subject": 'sub3', "grade": '80' }
 
-      ]
-        }
+                ]
+            }
 
         ];
-          $("#templateContainer").loadTemplate("#outerTemplate", posts, {error: function(e) { console.log(e); }});
-            var mailId = posts[0].mailId;
-            console.log("mailId",mailId)
-  $('.email').attr('href', 'mailto:' + mailId);
-});
-    
+        $("#templateContainer").loadTemplate("#outerTemplate", students, { error: function (e) { console.log(e); } });
+        var mailId = students[0].mailId;
+        console.log("mailId", mailId)
+        $('.email').attr('href', 'mailto:' + mailId);
+    });
+
 </script>
+</body></html>
